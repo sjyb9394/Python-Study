@@ -14,7 +14,7 @@
 # Pops and return from first index     O(N)  O(1)
 # Pops and return from last index      O(1)  O(1)
 
-ex) Basic grammar practice
+#ex) Basic grammar practice
 from collections import deque
 
 data = deque([2,3,4])
