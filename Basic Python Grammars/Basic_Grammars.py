@@ -30,16 +30,55 @@
       result = [i for i in a if i not in remove] => [1,2,4]
       
 3. String
+- Use '' or "" for initialization.                        => a = '' or a = ""
+- Use \ to print out ".                                   => print("\"Example\"")
+- Use + or , to combine several strings.                  => print("Hello"+"World") or print("Hello","World")
+- Use * (positive integer) to print out multiple times.   => print("asdf" * 3)
+- Can use indexing or slicing just like a List.
 
 4. Dictionary
+- Similar to map in C++
+- Used to stroe values in key:value pairs.
+- Unordered, changeable and does not allow duplicates (key).
+- Initialize with {}
+- O(1) for search, and modify.
+- Use in to search for an element. (List and Tuple can use in or not in)
+- key() return only key elements and values() return only value elements.
 
 5. Tuple
+- Used to store multiple items in a single variables.
+- Ordered and unchangeable.
+- Written with (,,) => a = (1,2,3,4)
 
 6. Set
+- Used to store multiple items in a single variable.
+- Unordered, unindexed, unchangeable and do not allow duplicate values.
+- Use {} and , for initialization.
+- Operations: 
+   a) & : Intersection
+   b) | : Union
+   c) - : Difference
+- add() : Use to add 1 element
+- update([]) : Use to add multiple elements
+- remove() : Use certain element
 
 7. If else Condition Statement
+- if, elif, and else.
+- Comparison operations: ==, !=, <, <=, >, >=
+- Logical operations: and, or, not
+- Other operations: in, not in (for list, tuple, string, dictionary)
+- One line syntax: (value if true) if (condition) else (value if false)
+- One line syntax with for loop: 
+  - When using if , for : => a = [i * 2 for i in range(5) if i % 2 == 0]
+  - When using if, else, for : => a = [i if i % 2 == 0 else 1 for i in range(5)]
 
 8. Loops
+- while loop is similar to other programming languages:
+    while condition:
+       code
+- for: Python use (for in) loop as default.
+  for variable in data-type or for variable in range(integger)
+- Can use break or continue.
 
 9. Functions
 
