@@ -81,11 +81,59 @@
 - Can use break or continue.
 
 9. Functions
+- Function is defiend using 'def' keyword:
+  def add(x,y):
+    return x+y
+- A function does not have to return or get parameters. (void)
+- Python use pass by assignment.
+  1) The parameter passed in is actually a reference to an object. (but the reference is passed by value)
+  2) If passing mutable object (list, dictionary..etc), it is passed by reference
+  3) If passing immutable object (Integer, string, tuple...etc), it is passed by value
+- If changing variable outside the function, use 'global' keyword.
+  ex) a = 0
+      def func():
+         global a
+         a+= 1
+      for i in range(10):
+         func()
+      print(a) => 10
+ - Lambda : Small anonymous function
+    - Can take any number of arguments, but can only have one expression.
+    - syntax: lambda arguments : expression
+    ex) print( (lambda a, b: a + b) (3,7)) => 10
 
 11. Class
+- Python is object oriented programming language. Almost everythin in python is an object, with its properties and methods.
+- A class is like an object constructor, or a "blueprint" for creating objects.
+- To create a class, use keyword 'class:'
+  ex) class Person:
+        age = 5
+        name = "Sam"
+- To create an object:
+  ex) P1 = Person()
+      print(P1.age) => 5
+- Constructor = __init__() function.
+  ex) class Person:
+          def __init__(self, name, age):
+            self.name = name
+            self.age = age
+      P1 = Person("sam", 5)
+- Self parameter is a reference to the current instance of the class and is used to access variables that belongs to the class.
+- Inheritance: Allows to define a class that inherits all the methods and properties from another class.
+  a) Parent class: the class being inherited from (base class)
+  b) Child class: the class that inherits from another class (derived class)
+  For more information: [https://www.w3schools.com/python/python_inheritance.asp]
 
 10. I/O
-
+- Use input() to get data from keyboard. (input() returns string type)
+- input().split() will split the input ans save in to variables.
+  ex) a,b = input().split('-') => Input: 1-2 => a = 1 b = 2
+- In order to change the data type use map().
+  ex) map(int, input().split()) => will split the input and change to integer type.
+- If there are too many input variables, instead of input(), use sys.stdin.readline()
+  - imposrt sys
+    data = sys.stdin.readline().rstrip()
+    
 
  
  
