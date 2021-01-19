@@ -1,4 +1,4 @@
-1. Data Types
+1. Data (Arithmetic)
 - Integers: Positive, Negative, 0
 - Real Numbers: Positive, Negative decimal numbers => Use floating point
   - Can use e or E for exponent 
@@ -8,7 +8,7 @@
     -> When adding 0.3 and 0.6, the result should be 0.9, however, there is no way to show 0.9 in binary, therefore the result will be 0.899999999999... => Need to round up to show it correctly.
 - Use +, -, *, /, //, ** for arithmetic operation.
 
-List
+2. List
 - Initialize with [] and separate the datas with ,(comma).
 - Similar to arrays in c++.
 - Can be use negative number for indexing. a[-1] -> will check last element.
@@ -28,21 +28,23 @@ List
       remove = [3,5]
       result = [i for i in a if i not in remove] => [1,2,4]
       
-String
+3. String
 
-Dictionary
+4. Dictionary
 
-Tuple
+5. Tuple
 
-Set
+6. Set
 
-If else Condition Statement
+7. If else Condition Statement
 
-Loops
+8. Loops
 
-Functions
+9. Functions
 
-I/O
+11. Class
+
+10. I/O
 
 
  
