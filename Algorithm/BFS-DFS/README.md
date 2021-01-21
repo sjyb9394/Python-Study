@@ -21,3 +21,11 @@ DFS - Depth-First Search
  4. Repeat 2-3 until all nodes are maked visited.<br />
         
  
+BFS - Breadth First Search
+- Use queue for implementing BFS
+
+Step:
+1. Insert start node to queue and mark visited. <br />
+2. Pop the first node, and insert all unvisited adjacency nodes to the queue <br />
+3. Repeat #2 until all nodes are marked visted.
+
