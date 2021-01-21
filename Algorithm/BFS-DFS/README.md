@@ -1,9 +1,9 @@
-Stack = LIFO (Last in First out)
-  - Use append(), pop() methods from list
-Queue = FIFO (First in First out)
-  - Use deque from collections library
-  - append() and popleft()
-  - Deque can be use for both stack and queue. 
+<h3>Stack = LIFO (Last in First out) </h3>
+* Use append(), pop() methods from list <br />
+<h3>Queue = FIFO (First in First out)</h3>
+* Use deque from collections library
+* append() and popleft()
+* Deque can be use for both stack and queue. 
 
 How to show graph in programming:
 1) Adjacency Matrix: Square matrix used to represent a finite graph.
