@@ -14,9 +14,10 @@ Example for both : https://algorithmtutor.com/images/graph_representation_direct
 DFS - Depth-First Search
  - Use stack for implementing DFS
  
- Step:  1) Insert start node to stack and mark visited.
-        2) If there is unvisited adjacency node for the node from top of the stack, insert that node into stack. 
-        3) If all adjacency nodes are visited, take out the top node from the stack.
-        4) Repeat 2-3 until all nodes are maked visited.
+ Step:  
+ 1. Insert start node to stack and mark visited. <br />
+ 2. If there is unvisited adjacency node for the top node from the stack, insert that node into stack. <br />
+ 3. If all adjacency nodes are visited, take out the top node from the stack.<br />
+ 4. Repeat 2-3 until all nodes are maked visited.<br />
         
  
