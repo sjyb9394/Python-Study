@@ -13,7 +13,7 @@
 Example for both : https://algorithmtutor.com/images/graph_representation_directed.png
 
 <h3>DFS - Depth-First Search </h3>
- - Use stack for implementing DFS
+ - Use stack for implementing DFS<br />
  
  Step:  
  1. Insert start node to stack and mark visited. <br />
@@ -23,7 +23,7 @@ Example for both : https://algorithmtutor.com/images/graph_representation_direct
         
  
 <h3>BFS - Breadth First Search</h3>
-- Use queue for implementing BFS
+- Use queue for implementing BFS<br />
 
 Step:
 1. Insert start node to queue and mark visited. <br />
