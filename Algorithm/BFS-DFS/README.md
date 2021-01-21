@@ -12,7 +12,7 @@
   
 Example for both : https://algorithmtutor.com/images/graph_representation_directed.png
 
-DFS - Depth-First Search
+<h3>DFS - Depth-First Search </h3>
  - Use stack for implementing DFS
  
  Step:  
@@ -22,7 +22,7 @@ DFS - Depth-First Search
  4. Repeat 2-3 until all nodes are maked visited.<br />
         
  
-BFS - Breadth First Search
+<h3>BFS - Breadth First Search</h3>
 - Use queue for implementing BFS
 
 Step:
