@@ -1,13 +1,14 @@
 <h3>Stack = LIFO (Last in First out) </h3>
-* Use append(), pop() methods from list <br />
-<h3>Queue = FIFO (First in First out)</h3>
-* Use deque from collections library
-* append() and popleft()
-* Deque can be use for both stack and queue. 
+- Use append(), pop() methods from list <br />
 
-How to show graph in programming:
-1) Adjacency Matrix: Square matrix used to represent a finite graph.
-2) Adjacency List: Collection of unordered lists used to represent a finite graph.
+<h3>Queue = FIFO (First in First out)</h3>
+- Use deque from collections library <br />
+- append() and popleft() <br />
+- Deque can be use for both stack and queue. <br />
+
+<h4>How to show graph in programming:</h4>
+ 1. Adjacency Matrix: Square matrix used to represent a finite graph.<br />
+ 2. Adjacency List: Collection of unordered lists used to represent a finite graph.
   
 Example for both : https://algorithmtutor.com/images/graph_representation_directed.png
 
