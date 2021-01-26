@@ -1,0 +1,14 @@
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        self.dfs(nums,[],res)
+        return res
+    
+    def dfs(self, dec_space, fixed_path, res):
+        if not dec_space:
+            res.append(fixed_path)
+            return
+        
+        for i in range(len(dec_space)):
+            self.dfs(dec_space[:i]+dec_space[i+1:], fixed_path+[dec_space[i]],res)
+            
