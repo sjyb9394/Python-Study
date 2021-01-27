@@ -3,16 +3,16 @@
 the optimal solution to the overall problem depends upon the optimal solution to its subproblems.
 
 <h4>Recurrence relation</h4>
-- A recurrence relation is an equation that defines a sequence based on a rule that gives the next term as a function of the previous terms.
- ex) Fibonacci = f(x) = f(x-1) + f(x-2)
- - When we don't use dynamic programming -> Fibonacci's running time is O(2^n)
-                                         -> For f(100) => 1,000,000,000,000,000,000,000,000,000,000 operations.
+- A recurrence relation is an equation that defines a sequence based on a rule that gives the next term as a function of the previous terms.</br>
+ ex) Fibonacci = f(x) = f(x-1) + f(x-2)</br>
+ - When we don't use dynamic programming -> Fibonacci's running time is O(2^n)</br>
+                                         -> For f(100) => 1,000,000,000,000,000,000,000,000,000,000 operations.</br>
  
  <h4>Constraint</h4>
- - We can not use dynamic programming all the time.
- - We can use when:
-  1) We can split the problems into sub-problems.
-  2) The results from the subproblems is unchanged from the bigger problem.
+ - We can not use dynamic programming all the time.</br>
+ - We can use when:</br>
+  1) We can split the problems into sub-problems.</br>
+  2) The results from the subproblems is unchanged from the bigger problem.</br>
   
   <h4>Memoization (Top Down)(Recursive)</h4>
   - Memoization is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached
@@ -28,7 +28,7 @@ the optimal solution to the overall problem depends upon the optimal solution to
     d[x] = fibo(x-1) + fibo(x-2)</br>
     return d[x]</br>
  ====================================</br>
- => Simply using a data structure such as array, or list, store all the results and if there is a result for certain input already in the array, instead of computing again, just return the value.
+ => Simply using a data structure such as array, or list, store all the results and if there is a result for certain input already in the array, instead of computing again, just return the value.</br>
  
  <h4>Bottom-up (Loop)</h4>
  ====================================</br>
