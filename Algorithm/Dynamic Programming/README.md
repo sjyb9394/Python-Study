@@ -16,32 +16,29 @@ the optimal solution to the overall problem depends upon the optimal solution to
   
   <h4>Memoization (Top Down)(Recursive)</h4>
   - Memoization is an optimization technique used primarily to speed up computer programs by storing the results of expensive function calls and returning the cached
-  result when the same inputs occur again.
+  result when the same inputs occur again.</br>
   
   ====Fibonacci using memoization====
-  d = [0] * 100
+  d = [0] * 100</br>
   
-  def fibo(x):
-    if x==1 or x==2: return 1
-    if d[x] != 0: return d[x]
+  def fibo(x):</br>
+    if x==1 or x==2: return 1</br>
+    if d[x] != 0: return d[x]</br>
     
-    d[x] = fibo(x-1) + fibo(x-2)
-    return d[x]
- ====================================
+    d[x] = fibo(x-1) + fibo(x-2)</br>
+    return d[x]</br>
+ ====================================</br>
  => Simply using a data structure such as array, or list, store all the results and if there is a result for certain input already in the array, instead of computing again, just return the value.
  
  <h4>Bottom-up (Loop)</h4>
- ====================================
- d = [0] * 100
- 
- d[1] = 1
- d[2] = 1
- n = 99
- 
- for i in range(3, n+1):
-  d[i] = d[i-1]+d[i-2]
- 
-print(d[n])
-=====================================
+ ====================================</br>
+ d = [0] * 100</br>
+ d[1] = 1</br>
+ d[2] = 1</br>
+ n = 99</br>
+ for i in range(3, n+1):</br>
+  d[i] = d[i-1]+d[i-2]</br>
+ print(d[n])</br>
+=====================================</br>
  
  
