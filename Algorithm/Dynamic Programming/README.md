@@ -28,7 +28,7 @@ the optimal solution to the overall problem depends upon the optimal solution to
     d[x] = fibo(x-1) + fibo(x-2)</br>
     return d[x]</br>
  ====================================</br>
- => Simply using a data structure such as array, or list, store all the results and if there is a result for certain input already in the array, instead of computing again, just return the value.</br>
+ => Simply using a data structure such as array, dictionary, or list, store all the results and if there is a result for certain input already in the array, instead of computing again, just return the value.</br>
  
  <h4>Bottom-up (Loop)</h4>
  ====================================</br>
