@@ -55,3 +55,14 @@ for i in range(e):
   union_parent(parent, a, b)
 
   #Run Time = O(V+M(1+log_(2-M/V)V))
+
+# Check cycle for undirected graph
+cycle = False
+
+for i in range(e):  #e = edge
+  a,b = map(int, input().split())
+  if find_parent(parent,a) == find_parent(parent,b):
+    cycle = True
+    break
+  else:
+    union_parent(parent, a, b)
