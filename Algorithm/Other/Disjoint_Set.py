@@ -53,3 +53,5 @@ for i in range(1, v+1):
 for i in range(e):
   a, b = map(int, input().split())
   union_parent(parent, a, b)
+
+  #Run Time = O(V+M(1+log_(2-M/V)V))
