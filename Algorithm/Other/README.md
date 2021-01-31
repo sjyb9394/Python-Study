@@ -3,7 +3,7 @@ Disjoint Set
 - A data structure that stores a collection of disjoint (non-overlapping) sets.
 
 Spanning Tree
-- A spanning tree is a subset of Graph G, which has all the vertices covered with minimum possible number of edges without cycle. 
+- A spanning tree is a subset of Graph G, which has all the vertices covered with minimum possible number of edges. 
 
 Kruskal Algorithm
 - finds a minimum spanning forest of an undirected edge-weighted graph
