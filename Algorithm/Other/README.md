@@ -14,6 +14,9 @@ Topology Algorithm
 Prime Number
 - The Sieve of Eratosthenes
 
+Tow Pointer
+- The two pointer technique is a useful tool to utilize when searching for pairs in a sorted array
+
 Permutation
 
 Combination
