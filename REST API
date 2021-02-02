@@ -5,3 +5,9 @@ Representational State Transfer API
 1) Resource: Represent by using URI
 2) Verb: Represent by using HTTP
 3) Representation
+
+Method: CRUD
+1) Create : Post 
+2) Read   : Get 
+3) Update : put / patch
+4) Delete : Delete
