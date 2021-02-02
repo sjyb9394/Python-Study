@@ -1,0 +1,7 @@
+Representational State Transfer API
+- Is an API that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services.
+- Is a set of architectural constraints, not a protocol or a standard.
+
+1) Resource: Represent by using URI
+2) Verb: Represent by using HTTP
+3) Representation
