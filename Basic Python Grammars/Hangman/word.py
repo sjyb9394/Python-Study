@@ -1,6 +1,6 @@
 import random
 
-wordlist = '...\\random_words.txt'
+wordlist = '..\\random_words.txt'
 
 def get_word():
     num_words_processed = 0
