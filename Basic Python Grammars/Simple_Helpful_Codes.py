@@ -34,3 +34,17 @@ Simple Helpful Python codes
   word = 'j' + word[1:] => jython
   word = word[:3] + 't' + word[4:] => jytton
   or just use replace() method
+
+8. List
+   [::]
+   => [::2] => access to even index
+   => [::-1] => access from reverse order 
+   l = [1,2,3,4]
+   l[1:3] = [] => [1,4]
+   - You can use del for delete element of the list or list itself.
+   - You can also use remove method.
+   index() = return the index of the certain element from left to right.
+   index(3,4) => return the index of certain element (in this case int 3) after index 4.
+   
+   
+   
