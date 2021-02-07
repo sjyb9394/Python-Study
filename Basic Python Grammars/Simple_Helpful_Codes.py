@@ -46,5 +46,14 @@ Simple Helpful Python codes
    index() = return the index of the certain element from left to right.
    index(3,4) => return the index of certain element (in this case int 3) after index 4.
    
-   
+   i = [1,2,3,4,5]
+   j = i       => Even though it seems like j copied elements from i, but actually, only the name is different, they are using same list object.
+   j[0] = 100
+   print(j,i) => [100,2,3,4,5] [100,2,3,4,5] 
+   - You need to use copy() method for shallow copy.  (Construct a new compound object and inserts references into it to the objects found in the original. Immutable elements will not be shared but mutable elements will)
+   - You need to use deepcoy() method for deep copy. (Create everything new, new variable, new list object, but just same elements. (will iterate everything from orginial to copy the elements))
+   Key
+   1. Simple copy = Same object
+   2. Shallow copy = New compund object but same reference.
+   3. Deep copy = New compund object and copy the elements recursively. (Distinct object from original)
    
