@@ -1,4 +1,4 @@
-Simple Helpful Python codes
+Simple python code information that i frequently forget
 1. sep = '' (Separate each elements)
   print('hi','how are you', sep=',') => hi, how are you
 
