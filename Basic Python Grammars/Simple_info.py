@@ -14,7 +14,7 @@ Simple python code information that i frequently forget
    - help() returns explanations of the scope
    - dir() returns name of the methods of the scope
 
-5. Use \ for printing certain symbols.
+5. Use \ for printing certain symbols. And line break for code. (difference from \n)
   print('I dont't Know') => error
   print('I dont\'t know')
   print("Say "I don't know"") => error
@@ -22,7 +22,7 @@ Simple python code information that i frequently forget
   path = "C:\\name\\path_name...." or path = r'C:\name\path...' (r = raw)
 
 6. For printing multiple lines without using multiple print function
-    print("""           print("""\
+    print("""           print("""\     
     line1               line1
     line2         =>    line2
     line2               line2\
@@ -56,4 +56,42 @@ Simple python code information that i frequently forget
    1. Simple copy = Same object
    2. Shallow copy = New compund object but same reference.
    3. Deep copy = New compund object and copy the elements recursively. (Distinct object from original)
+        
+9. Tuple
+   - Can use almost every same method as list except changing the elements. Tuple is mutable.
+   - Usually used for read, not for write
+
+10. Dictionary
+   - Update() = add if not exist, over-write if exist
+   - get() = Find the value with key.
+   - pop() = get and delete
+   - clear() = Delete all key-value elements
+   - Copying works same as List. (Reference, shallow, deep)
    
+11. Set
+   - Use {} without key-value
+   - Has no sequence or order, cannot use 'set[0]'
+   - add(), remove(), clear()...etc
+   - Operation = -, &, |, ^
+        1. -: Difference.
+        2. &: Intersection
+        3. |: Union
+        4. ^: Symmetric difference.
+ 
+12. is, ==
+   - == : compares the value          (1 == True) => True
+        -> usually use for compare the values
+   - is : compare the object itself.  (1 is True) => False
+        -> usually use for if the object is None or not
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
