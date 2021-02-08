@@ -9,6 +9,17 @@ Simple python information.
                       Advantage = Faster.
                       Disadvantage = more time needed to complete the entire compilation step before testing
                                    = platform dependence of the generated binary code
+          
+0.1.. Data Type conversion
+int to binary = bin() 
+binary to int = int(binary_number, 2)
+int to oct = oct()
+oct to int = int(oct_num, 8)
+int to hex = hex()
+hex to int = int(hex_num, 16)
+character to int in unicode = ord()
+int to character = chr()
+
 1. sep = '' (Separate each elements)
   print('hi','how are you', sep=',') => hi, how are you
 
@@ -330,17 +341,149 @@ Simple python information.
     def drive(self):  # this method must be created within any child class.
       pass
   
-34. 
+34. static method: We can access to the method without instanciating the object.
+ex)
+class Person(object):
+  kind = 'human'
+  
+  @classmethod                    
+  def kind(cls):
+    return cls.kind
+  #cls refers to the class. Bound to the class and not object of the class.
+  #Have access to the state of the class as it takes a class parameter that points to the class and not the ojbect instance.
+  # This can modify a class state that would apply across all the instances of the calss.
+  
+  @staticmethod                   
+  def about(year):
+    print(year)
+    #Static methods know nothing about the class state.
+    # Static method can't access or modify class state.
     
+ 35. File open
+ ex) f = open('test.txt', 'w') w = write, r = read, a = append, w+/r+ = both read and write.(use seek() to change the position)
+     f.write('test')
+     print('test2', file = f)    => both can be written on the text file
+     f.close() 
     
+    using with: Do not have to write close()
+    with open('test.txt', 'w') as f:
+      code...
+      
+    when read : f.read() = get everything
+                f.readline() = get line by line (use with loop)
+                  ex) while True:
+                        print(f.readline())
+                        if not line: break
+                  chunk = get text by text number in each line.
+    - seek() - change the position in the text file.
+ 
+36. Template : Allows to create simplified syntax for output specification.
+    ex)
+    import string
+    s = """\
+    Hi $name                      
+    $contents
+    Have a good day
+    """
+    t = string.Template(s)
+    contents = t.substitue(name='Mike', contents='How are You')
+    print(contents)
+                        
+    => If the texts are written in text file:
+      with open('text.txt') as f:
+        t = string.Template(f.read()
+        #same_code as above
+        # t can be used outside the with
+                            
+37. csv file example:
+    import csv
+    with open('test.csv','w') as csv_file:
+        fieldnames = ['Name', 'Count'] #Column
+        writer = csv.DictWriter(csv_file, fieldnames = fieldnames)
+        writer.writeheader()
+        writer.writerow({...})
+                          
+    with open('test.csv', 'r') as csv_file:
+        reader = csv.DictReader(csv_file)
+        for row in reader:
+            print(row[...], row[...])
     
+38. File library
     
+    import os
+    import pathlib
+    import globe
+    import shutil
+    #os
+    os.path.exists('file_name') = return True if file exist
+    os.path.isfile('file_name') = return True if input is a file                       
+    os.path.isdir('file_name')  = return True if input is a folder
+    os.rename('file_name', 'change_name')      = change the file's name
+    os.symlink('file_name', 'file_name2')     = Connect link between files, they both share same contents
+    os.mkdir('test_dir')        = create folder
+    os.rmdir('test_dir')        = delete folder / if the folder is empty
+    os.listdir('test_dir')      = return list of folder
+    os.getcwd()                 = return current path position                   
+    #pathlib
+    pathlib.Path('empty.txt').touch() = create empty file
+    #glob
+    glob.glob('test_dir/*)      = return list of all files and directories
+    #shutil
+    shutil.copy('file_name', 'copy_file) = copy and paste the file inside the same directory.          
+    shutil.rmtree('dir_name')    = delete folder / doesn't matther if folder is not empty                        
     
+39. tarfile - zip file in linux/MAC
+    import tarfile
+    with tarfile.open('test.tar.gz', 'w:gz') as tr:
+        tr.add('test_dir')                #zip the file
+    with tarfile.open('test.tar.gz', 'r:gz') as tr:
+        tr.extractall(path='test_tar')   #create folder and extract
+        with tr.extractfile('test_dir/sub_dir/sub_test.txt') as f:  # read file without extract the tarfile
+            print(f.read()) 
+    #unzip in comnmandline Linux/MAC
+    tar zxvf text.tar.gz -C /tmp
     
+40. zipfile
+    import zipfile
+    import glob
+    with zipfile.ZipFile('test.zip', 'w') as z:
+        for f in glob.glob('test_dir/**', recursive=True):
+            z.write(f)  // if not using glob, we will have to write for all files and folders.
+    with zipfile.ZipFile('test.zip', 'r') as z:
+        z.extractall('folder_name') #extract everything
+        with z.open('test_dir/test.txt') as f:
+            print(f.read()) #access to only 1 file without extract
+
+41. subprocess: run commands that runs on command line in IDE
+    import subprocess
+    subprocess.run(['ls','-al'])
+    p1 = subprocess.Popen(['ls','-al'], stdout = subprocess.PIPE)
+    p2 = subprocess.Popen(['grep','test'], stdin=p1.stdout, stdout=subprocess.PIPE)            
+    p1.stdout.close()
+    output = p2.communicate()[0]
+    print(output)
+               
+42. datetime
+    import datetime
+    now = datetime.datetime.now() # current time year, month, date, hour, minute, second
+    print(now)
+    print(now.isoformat())
+    print(now.strftime('%d/%m/%y-%H%M%S%f') # can modify time format as programmer wants
+    today = datetime.date.today() # return only year, modnth, date
+    t = datetime.time(hour=1, minute=10, second = 5, microsecond=100) # returns only hour, minute, second
+    d = datetime.timedelta(weeks=-1)  #timedelta can represent the time in past or future
     
+    import time
+    time.sleep(1)   # wait for 1 second
     
-    
-    
+    file backup
+    import os
+    import shutil
+    file_name = 'text.txt'
+    if os.path.exists(file_name):
+          shutil.copy(file_name, "{}_{}".formate(file_name, now))
+ 
+
     
     
     
