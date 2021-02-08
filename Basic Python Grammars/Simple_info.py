@@ -1,4 +1,14 @@
-Simple python code information.
+Simple python information.
+0. Interpreted language = A type of programming language for which there is an interpreter which runs over a virtual machine.
+                        = The interpreter executes the code line by line and converts it into low level machine language.
+                        Advantage = More flexible and often offer feature like dynamic typing and smaller program size.
+                                  = The code itself is platform independent because interpreters execute the source program code themselves.
+                        Disadvantage = Slower.
+   Compiled Language = Are converted directly into machine code that the processor can execute. As a result, they tend to be faster and more
+                       efficient than interpreted languages.
+                      Advantage = Faster.
+                      Disadvantage = more time needed to complete the entire compilation step before testing
+                                   = platform dependence of the generated binary code
 1. sep = '' (Separate each elements)
   print('hi','how are you', sep=',') => hi, how are you
 
@@ -67,7 +77,12 @@ Simple python code information.
    - pop() = get and delete
    - clear() = Delete all key-value elements
    - Copying works same as List. (Reference, shallow, deep)
-   
+   - setdefault(key,value) = if key not in d: d[key]=value
+        or        (works same)
+   - from collections import defaultdict
+        d = defaultdict(int)
+        
+              
 11. Set         {}
    - Use {} without key-value
    - Has no sequence or order, cannot use 'set[0]'
@@ -208,8 +223,127 @@ Simple python code information.
         for word in words:
           if word.isupper():
             raise UppercaseError(word)    
-            
+ 
+27. input argument in command line
+    ls - list of files in current directory
+    pwd - path of current directory
+    cd - move to directory
+    How to use arguement from command line
+    python file.name arg1 arg2 ..... 
+    
+    - use import sys
+          sys.argv => get argument from command line in list type. sys.argv[0] will have file name.
         
-        
-        
-        
+28. Module and packages
+    - When import module by '*', the package needs to have __init__.py and __all__ = [module_name] in side the init file. 
+    - Use try, except for importerror.
+        try: 
+          from .....
+        except ImportError: 
+          from .....
+          
+    - setup.py
+      = Use setuptools for test, build, export in python.
+      
+      from setuptools import find_packages, setup
+      
+      setup(name=
+            version=
+            description=
+            long_description=
+            url=
+            author=
+            author_email=
+            license=
+            packages=
+            classifiers=
+            zip_safe=)
+      #https://packaging.python.org/tutorials/packaging-projects/#setup-args
+      or
+      
+      from distutils.core import setup
+      
+      setup(
+           name=
+           version=
+           packages=
+           url=
+           license=
+           author=
+           author_email=
+           description=
+      )
+      
+     
+      - Then use install, build, test from Command line.
+      - python setup.py sdist for deploy file.
+      
+29. python standard library = https://docs.python.org/3.6/library/index.html      
+30. import pretty way
+    1. import standard library most above
+    2. with one blank space import third-party library
+    3. with one blank space my-own library
+    4. with one blank space local-python library
+    5. All alphabetical order.
+   - use __file__ to find the path of the file.
+   - sys.path = returns the path where the libraries are installed.
+    
+31. Override = Rewrite the method from parent class method
+    Overload = Same method name but different parameter.
+    super()= Returns a temporary object that allows reference to a parent class.
+            - Avoid the usage of the super class explicitly.
+            - Enable multiple inheritances.
+    property = We can modify our class and implement the value constraint without any chnage required to the client code.
+              - Use one _ to create property
+              - Use two __ to create property but not accessible from outside of the class.
+                      - If re-initializing as a struct, it will over-write.
+              - @property = get the value
+              - @value.setter = set the value
+              - @value.deleter = deleting the value
+ 
+32. Duck Typing: A type system used in dynamic language. We do not check types at all. Instead, we check for the presence of a given method or attribute.
+    ex)
+    class bird:
+      def fly(self):
+        print("bird flying")
+    class airplane:
+      def fly(self):
+        print("plane flying")
+    class fish:
+      def swim(self):
+        print("fish swimming")
+    def flying(entity):
+      entity.fly()
+    
+    b = bird()
+    a = airplane()
+    f = fish()
+    flying(b) =>  bird flying
+    flying(a) => plane flying
+    flying(f) => error, f object has no attribute fly()
+
+33. Abstract class: Allows to create a set of methods that must be created within any child classes built form the abstarct class.
+  import abc
+  class Person(metaclass=abc.ABCMeta):
+    ...
+    @abc.abstractmethod
+    def drive(self):  # this method must be created within any child class.
+      pass
+  
+34. 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
