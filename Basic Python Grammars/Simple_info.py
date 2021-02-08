@@ -1,4 +1,4 @@
-Simple python code information that i frequently forget
+Simple python code information.
 1. sep = '' (Separate each elements)
   print('hi','how are you', sep=',') => hi, how are you
 
@@ -35,7 +35,7 @@ Simple python code information that i frequently forget
   word = word[:3] + 't' + word[4:] => jytton
   or just use replace() method
 
-8. List
+8. List     []
    [::]
    => [::2] => access to even index
    => [::-1] => access from reverse order 
@@ -57,18 +57,18 @@ Simple python code information that i frequently forget
    2. Shallow copy = New compund object but same reference.
    3. Deep copy = New compund object and copy the elements recursively. (Distinct object from original)
         
-9. Tuple
-   - Can use almost every same method as list except changing the elements. Tuple is mutable.
+9. Tuple      ()
+   - Can use almost every same method as list except changing the elements. Tuple is immutable.
    - Usually used for read, not for write
 
-10. Dictionary
+10. Dictionary    {key:value}
    - Update() = add if not exist, over-write if exist
    - get() = Find the value with key.
    - pop() = get and delete
    - clear() = Delete all key-value elements
    - Copying works same as List. (Reference, shallow, deep)
    
-11. Set
+11. Set         {}
    - Use {} without key-value
    - Has no sequence or order, cannot use 'set[0]'
    - add(), remove(), clear()...etc
@@ -84,13 +84,131 @@ Simple python code information that i frequently forget
    - is : compare the object itself.  (1 is True) => False
         -> usually use for if the object is None or not
         
+13. while-else/ for-else
+   - else statement will be execute only if while-loop has been executed for all condition or statement without break statement.
         
+14. zip: using in for loop, when trying to iterate more than one data-structure.
+        ex) for day,fruit, drink in zip(days,fruits,drinks)
+                print(day,fruit,drink)
+
+15. Use items() method for iterating dictionary data structure.
+        - items() returns tuple type for each element in side the list type wrapped by dictioniary_type().
         
-        
-        
-        
-        
-        
+16. Don't use list for default argument. ex) def ex(l=[]) => works correctly, but list is created only once and if this function is called more than one more time, 
+        the object will be point to the same list's reference as previous one.
+    If you want to check if the list's argument is empty, use 'l=None, and if l is None: ....'
+
+17. *args = tuple argument. If number of argument is more than one, then all arguments will be sent in one tuple-type element.
+        or we can send the argument as tuple-type element at first place.
+        ex) def some_function(word, *args):....
+            t = ('hi', 'hello')
+            some_function('bye', *t)
+
+    **kargs = similar to *args, but receive the argument as dictionary-type.
+
+18. Docstrings : function_name.__doc__
+  - returns the comment inside the function
+ 
+19. Function inside the function can be used only in that function.
+20. closure: 
+  - A Closure is a function object that remembers values in enclosing scopes even if they are not present in memory.
+  - Closure can avoid the use of global values and provides some form of data hiding. It can also privoide an object oriented solution to the problem.
+  - A closure—unlike a plain function—allows the function to access those captured variables through the closure’s copies of their values or references, 
+  even when the function is invoked outside their scope.
+  ex)def circle_area_func(pi):
+        def circle_area(radius):
+            return pi * radius * radius
+        return circle_area
+     ca1 = circle_area_func(3.14)
+     ca2 = circle_area_funct(3.1416)
+     print(ca1(5))
+     print(ca2(10))
+      
+21. Decorator: a decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying it.
+  ex)
+  def print_info(func):
+    def wrapper(*args, **kwargs):
+      print('start')
+      result = func(*args,**kwargs)
+      print('end')
+      return result
+    return wrapper
+  
+  @print_info            Same process         
+  def add_num(a,b):         =>           def add_num(a,b)
+      return a+b                            return a+b
+  
+  r = add_num(10,20)                    f = print_info(add_num)
+  print(r)                              r = f(10,20)
+                                        print(r)
+  - When using more than 1 decorator, you can write more than one decorators above the functino name
+  ex) @print_info
+      @print_more
+      -> Sequence matters. print_info starts first, then execute print_more and termiante, then print_info terminate.
+    
+22. Lambda = Anonymous function
+  Syntax = lambda argument: expression
+        ex) lambda a : a + 10
+
+23. Generator: Instead of iterate whole data, we can run and stop the loop whenever we want.
+    1,Generator-Function : A generator-function is defined like a normal function, 
+                           but whenever it needs to generate a value, it does so with the yield keyword rather than return. 
+                           If the body of a def contains yield, the function automatically becomes a generator function.
+      ex) def ex():
+              yield 'good morning'
+              yield 'good afternoon'
+          for i in ex():
+            print(i)
+            
+    2. Generator-Object : Generator functions return a generator object. Generator objects are used either by calling the 
+                          next method on the generator object or using the generator object in a “for in” loop (as shown in the above program).
+     ex) x = ex()
+         print(x.__next__())
+
+24. Initialization of list, dict, set, generator in one line
+    t = (1,2,3,4,5)
+    f = (6,7,8,9,10)
+    
+    l = [i for i in t]  #list
+    d = {x:y for x, y in zip(t,f)}  #dictionary
+    
+    #set
+    s = set() 
+    s = {x for x in t}
+    
+    #generator
+    def g():
+      for i in range(10):
+        yield i
+    
+    g = (i for i in range(10))
+ 
+25. Global, Local element
+  ex) animal = 'cat'
+      def f():
+        print(animal)                                
+        animal = 'dog'  => error, the value animal is globally used before this line. 
+        print(animal)   
+     -> If you want to get access to the global element, need to use global keyword inside the function.
+     -> Use globals() or locals() when check if variable, method, functions are initiallized globally or locally.
+
+26. try, except, else, finally
+    try = only if there is no error
+    except = runs if there is error.
+    else = only there is no error after all cases are passed.
+    finally = always executes after all of above codes are handled.
+    
+    Make my own error
+    ex) use raise to error occurrence
+    calss UppercaseError(Exception):
+      pass
+    
+    def check():
+        words = ['APPLE']
+        for word in words:
+          if word.isupper():
+            raise UppercaseError(word)    
+            
         
         
         
