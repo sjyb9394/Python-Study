@@ -1,0 +1,37 @@
+"""
+CRITICAL
+ERROR
+WARNING
+INFO
+DEBUG
+"""
+
+import logging
+
+
+# Filter
+class NoPassFilter(logging.Filter):
+    def filter(self, record):
+        log_message = record.getMessage()
+        return 'password' not in log_message
+
+
+# customize the format of the log with formatter
+formatter = '%(asctime)s:%(message)s'
+logging.basicConfig(filename='test.log', level=logging.INFO, format = formatter)
+                    #store to file        #printout upto info level
+ 
+#file handler
+h = logging.FileHandler('logtest.log')
+logger.addHandler(h) => will create file name logtest.log (only logs that were used with logger will be written to the filehandler)
+
+logging.critical('critical')
+logging.error('error')
+logging.warning('warning')
+logging.info('info')
+logging.debug('debug')
+
+# change the level using logger
+logger = logging.getLogger(__name__)
+logger.addFilter(NoPassFilter()) # add filter to the logger
+logger.setLevel(logging.DEBUG)
